@@ -10,12 +10,8 @@ public class Ex4_10 {
 
 		for (int i = 0; i < 10; i++) {
 			for (int j = 0; j <= i; j++) {
-				if (j == 0) {
-					arr[i][j] = 1;
-				}
-				else {
-					arr[i][j] = (int)((double)(multiply(i)) / (multiply(j) * multiply(i-j)));
-				}
+				arr[i][j] = (int) ((double) (multiply(i)) / (multiply(j) * multiply(i - j)));
+
 			}
 		}
 
@@ -27,11 +23,15 @@ public class Ex4_10 {
 		}
 
 	}
-	
+
 	public static int multiply(int n) {
+		if (n == 0) {
+			return 1;
+		}
+
 		int result = 1;
-		for(int i=1;i<=n;i++)
-			result+=i;
+		for (int i = 1; i <= n; i++)
+			result *= i;
 		return result;
 	}
 
